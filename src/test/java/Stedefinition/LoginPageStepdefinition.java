@@ -12,7 +12,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginPageStepdefinition {
-	WebDriver driver;                      // Webdriver is used to control and interact with web browsers and declared with driver variable 
+	WebDriver driver;                      // Webdriver is used to control and interact with web browsers and I have declared with driver variable 
 
     By LoginUsername = By.id("username");  // By is a class in selenium that can be used to locate web elements on a web page.
 
@@ -45,8 +45,8 @@ public class LoginPageStepdefinition {
 
 	@When("I enter valid credentials")
 	public void i_enter_valid_credentials() {
-       driver.findElement(LoginUsername).sendKeys("UserOne");    // we using findElement method to locate the web element and  using sendkeys method to pass the user credentials 
-       driver.findElement(LoginPassword).sendKeys("passwd");
+       driver.findElement(LoginUsername).sendKeys("testauto1326@gmail.com");    // we using findElement method to locate the web element and  using sendkeys method to pass the user credentials 
+       driver.findElement(LoginPassword).sendKeys("jodan1326");
 	}
 	
 	@When("I Click on signin button")
@@ -60,16 +60,16 @@ public class LoginPageStepdefinition {
 	    Assert.assertTrue(GetTitle.contains("LinkedIn"));   	// here also we are assert condition to validate the Linkedin home page
 	}
 
-	@When("I enter wrong {string} and  correct {string} credentials")
-	public void i_enter_wrong_and_correct_credentials(String string, String string2) {
-		 driver.findElement(LoginUsername).sendKeys("UserOne");     // here we are passing wrong username and correct password
-	     driver.findElement(LoginPassword).sendKeys("passwd");		
+	@When("I enter wrong username and  correct password credentials")
+	public void i_enter_wrong_username_and_correct_password_credentials() {
+		 driver.findElement(LoginUsername).sendKeys("testauto");     // here we are passing wrong username and correct password
+	     driver.findElement(LoginPassword).sendKeys("jodan1326");		
 	}
 	
-	@When("I enter correct {string} and  wrong {string} credentials")
-	public void i_enter_correct_and_wrong_credentials(String string, String string2) {
-		 driver.findElement(LoginUsername).sendKeys("HImabindub1590@gmail.com");    // here we are passing correct username and wrong password
-	     driver.findElement(LoginPassword).sendKeys("passwd");
+	@When("I enter correct username and  wrong password credentials")
+	public void i_enter_correct_username_and_wrong_password_credentials() {
+		 driver.findElement(LoginUsername).sendKeys("testauto1326@gmail.com");    // here we are passing correct username and wrong password
+	     driver.findElement(LoginPassword).sendKeys("password");
 	}
 
 	@Then("I should be able to see and validate the error message for the username field")
@@ -88,5 +88,7 @@ public class LoginPageStepdefinition {
 	    Thread.sleep(3000);
 	    Assert.assertTrue(ExpectedErrormessage.equals(ActualErrormessage));
 	}
+	
+
 
 }
