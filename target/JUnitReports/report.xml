@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="13.884">
+    <testcase classname="Login Functionality" name="As a User I shouldn't be able to login If I enter wrong username" time="13.625">
+        <system-out><![CDATA[Given I am on the Linkedin login page.......................................passed
+When I enter wrong "username" and  correct "password" credentials...........passed
+And I Click on signin button................................................passed
+Then I should be able to see and validate the error message for the username field.passed
+]]></system-out>
+    </testcase>
+</testsuite>
