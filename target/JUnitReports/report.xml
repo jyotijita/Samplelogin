@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="14.805">
-    <testcase classname="Login Functionality" name="As a User I shouldn't be able to login If I enter wrong username" time="14.565">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="32.189">
+    <testcase classname="Login Functionality" name="As a User I want to login to a website so that I can access my account" time="10.122">
+        <system-out><![CDATA[Given I am on the Linkedin login page.......................................passed
+When I enter valid credentials..............................................passed
+And I Click on signin button................................................passed
+Then I should be logged in successfully.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login Functionality" name="As a User I shouldn't be able to login If I enter wrong username" time="10.461">
         <system-out><![CDATA[Given I am on the Linkedin login page.......................................passed
 When I enter wrong username and  correct password credentials...............passed
 And I Click on signin button................................................passed
 Then I should be able to see and validate the error message for the username field.passed
 ]]></system-out>
+    </testcase>
+    <testcase classname="Login Functionality" name="As a User I shouldn't be able to login If I enter wrong password" time="11.402">
+        <failure message="" type="java.lang.AssertionError"><![CDATA[Given I am on the Linkedin login page.......................................passed
+When I enter correct username and  wrong password credentials...............passed
+And I Click on signin button................................................passed
+Then I should be able to see and validate the error message for password field.failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at Stedefinition.LoginPageStepdefinition.i_should_be_able_to_see_and_validate_the_error_message_for_password_field(LoginPageStepdefinition.java:89)
+	at ✽.I should be able to see and validate the error message for password field(file:///C:/Users/sparv/eclipse-workspace/SampleLogin/src/test/resources/Loginpage.feature:23)
+]]></failure>
     </testcase>
 </testsuite>
